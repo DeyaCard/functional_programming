@@ -14,3 +14,103 @@ Example
 Input: [9, 2, 7, 12]
 
 Output: [2, 7, 9, 12]
+
+
+BUBBLE SORT NOTES:
+
+geeksforgeeks.com
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
+
+How Bubble Sort Works?
+Consider an array arr[] = {5, 1, 4, 2, 8}
+
+First Pass: 
+
+Bubble sort starts with very first two elements, comparing them to check which one is greater.
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1. 
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4 
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2 
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+Second Pass: 
+
+Now, during second iteration it should look like this:
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ) 
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 ) 
+Third Pass: 
+
+Now, the array is already sorted, but our algorithm does not know if it is completed.
+The algorithm needs one whole pass without any swap to know it is sorted.
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+
+<script>
+  
+function swap(arr, xp, yp)
+{
+    var temp = arr[xp];
+    arr[xp] = arr[yp];
+    arr[yp] = temp;
+}
+  
+// An optimized version of Bubble Sort
+function bubbleSort( arr, n)
+{
+var i, j;
+for (i = 0; i < n-1; i++)
+{
+    for (j = 0; j < n-i-1; j++)
+    {
+        if (arr[j] > arr[j+1])
+        {
+        swap(arr,j,j+1);
+          
+        }
+    }
+  
+}
+}
+  
+/* Function to print an array */
+function printArray(arr, size)
+{
+    var i;
+    for (i=0; i < size; i++)
+        document.write(arr[i]+ " ");
+    document.write("\n");
+}
+  
+// Driver program to test above functions
+  var arr = [64, 34, 25, 12, 22, 11, 90];
+    var n = 7;
+    document.write("UnSorted array: \n");
+    printArray(arr, n);
+  
+    bubbleSort(arr, n);
+    document.write("Sorted array: \n");
+    printArray(arr, n);
+  
+  
+</script>
+
+Output
+Sorted array: 
+1 2 4 5 8 
+
+
+codegrepper.com
+let arr = [4, 32, 2, 5, 8];
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = i + 1; j < arr.length; j++) {
+    if (arr[i] > arr[j]) {
+      temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+  }
+}
+console.log("Sorted array=>", arr);
