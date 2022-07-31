@@ -8,9 +8,22 @@ You may not use the replace() method or regular expressions to solve this proble
 
 Solve the problem with and without recursion.
 
-Example
-Input: "Jasmine Ann Jones"
 
+EXAMPLES
+Input: "Jasmine Ann Jones"
 Output: "Jasmine%20Ann%20Jones"
 
+Input: "Whiteboarding is fun"
+Output: "Whiteboarding%20is%20fun"
 
+
+SOLVE WITHOUT RECURSION
+
+
+
+
+
+SOLVE WITH RECURSION
+
+
+SOLVE WITH FILTER()

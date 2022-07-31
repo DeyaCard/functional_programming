@@ -1,0 +1,62 @@
+Question #2: Array Deduping
+
+Write an algorithm that removes duplicates from an array. 
+Do not use a function like filter() to solve this. 
+Once you have solved the problem, demonstrate how it can be solved with filter(). 
+Solve the problem with and without recursion.
+
+
+
+Clarifying questions for interviewer:
+1. Is JavaScript the preferred coding language?
+2. Will numbers always be passed as integers - not strings?
+3. Should filter() be solved with or without recursion?
+4. Will this be timed?
+
+
+Possible edge case:
+an empty array
+
+Example
+Input: [6, "cat", 10, 12, 43, "cat", 7]
+Output: [6, "cat", 10, 12, 43, 7]
+
+Input: [2,2,2,2]
+Output: [2]
+
+SOLVE WITHOUT RECURSION OR FILTER
+
+let array = [6, "cat", 10, 12, 43, "cat", 7]
+function removeDupes(array) {
+  let noDupes = [...newSet(array)]
+  return noDupes; 
+}
+
+
+
+SOLVE WITH FILTER()
+
+let array = [6, "cat", 10, 12, 43, "cat", 7]
+function removeDupes(array) {
+  let uniqueArray = array.filter(function(element, index) {
+    return array.indexOf(element) === index;
+  });
+  return uniqueArray;
+}
+
+
+SOLVE WITH RECURSION
+
+const array = [6, "cat", 10, 12, 43, "cat", 7]
+
+const removeDupes = (array) => {
+  if (array.length === 0) {
+    return array.concat([]);
+  }
+  const uniqueArray = array.slice(0, -1);
+  if (uniqueArray.includes(array[array.length -1])) {
+    return removeDupes(uniqueArray)
+  } else {
+    return removeDupes(uniqueArray).concat(array[array.length -1])
+  }
+}

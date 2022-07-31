@@ -7,6 +7,8 @@ Whiteboard practice prompts for Epicodus peer evaluation.
 ## Technologies used:
 * VS Code
 * GitHub
+* JavaScript
+* Git
 
 
 
